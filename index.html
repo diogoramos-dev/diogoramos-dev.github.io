@@ -1,52 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Diogo Ramos</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #222; }
-        header { background: #222; color: #fff; padding: 1.5rem 0; text-align: center; }
-        nav { background: #333; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; }
-        nav li { margin: 0 1.5rem; }
-        nav a { color: #fff; text-decoration: none; font-weight: bold; padding: 1rem 0; display: block; }
-        nav a:hover { color: #b0b0b0; }
-        section { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
-        h2 { color: #222; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-        .projects-list, .blog-list { list-style: none; padding: 0; }
-        .projects-list li, .blog-list li { margin-bottom: 1.5rem; }
-        footer { text-align: center; padding: 2rem 0; color: #888; }
-    </style>
-    <script>
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(s => s.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
-        }
-        window.onload = function() {
-            showSection('home');
-            document.querySelectorAll('nav a').forEach(link => {
-                link.onclick = function(e) {
-                    e.preventDefault();
-                    showSection(this.getAttribute('href').substring(1));
-                }
-            });
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diogo Ramos</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #888;
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Diogo Ramos</h1>
-        <p>Salesforce Developer</p>
-    </header>
+  <main>
+    <h1>Diogo Ramos</h1>
+    <p>Salesforce Architect | Salesforce Developer | 23x Salesforce Certified</p>
+
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
     </nav>
+  </main>
+
+  <footer>&copy; 2025 Diogo Ramos</footer>
 </body>
-            
-         
+</html>
