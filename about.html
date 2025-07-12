@@ -1,64 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Diogo Ramos</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-  <header class="top-nav">
-    <div class="nav-container">
-      <img src="favicon-32x32.png" alt="Diogo Ramos logo" class="logo-img" />
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+	
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About | Diogo Ramos</title>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+		<script src="components.js" defer></script>
+	</head>
 
-  <main class="container">
-    <section class="profile intro-text">
-      <p>Hello, I'm <strong>Diogo Ramos</strong>, a Salesforce Developer and Architect.</p>
+	<body class="body">
+		
+		<site-header></site-header>
 
-      <p>
-        A passionate developer, strong enthusiast of best practices, and motivated by delivering solutions that positively impact clients.
-      </p>
+		<main class="main container">
+		
+			<h1 class="title">About</h1>
 
-      <p>
-        A professional with over 8 years of experience working with the platform, 23 certifications, and 15 superbadges.
-      </p>
+			<section class="intro-text profile">
+				<p class="intro-text__paragraph">Hello, I'm <strong>Diogo Ramos</strong>, a Salesforce Developer and Architect.</p>
+				<p class="intro-text__paragraph">
+					A passionate developer, strong enthusiast of best practices, and motivated by delivering solutions that positively impact clients.
+				</p>
+				<p class="intro-text__paragraph">
+					A professional with over 8 years of experience working with the platform, 23 certifications, and 15 superbadges.
+				</p>
+				<p class="intro-text__paragraph">
+					As a lifelong learner, I love discovering new things that help me become a better architect and developer.
+				</p>
+				<p class="intro-text__paragraph">
+					I enjoy sharing some of the things I’m learning on my <a href="blog.html" class="intro-text__link">blog</a>.
+				</p>
+				<p class="intro-text__paragraph">
+					And if you’d like to know more or get in touch, feel free to connect with me.
+				</p>
+			</section>
 
-      <p>
-        As a lifelong learner, I love discovering new things that help me become a better architect and developer.
-      </p>
+			<section class="social-links">
+				<ul class="social-links__list">
+					<li><a href="https://www.linkedin.com/in/diogo-ramos1" target="_blank" class="social-links__link">LinkedIn</a></li>
+					<li><a href="https://www.salesforce.com/trailblazer/dramos" target="_blank" class="social-links__link">Trailhead</a></li>
+					<li><a href="https://github.com/diogoramos-dev" target="_blank" class="social-links__link">GitHub</a></li>
+				</ul>
+			</section>
 
-      <p>
-        I enjoy sharing some of the things I’m learning on my <a href="blog.html">blog</a>.
-      </p>
+		</main>
 
-      <p>
-        And if you’d like to know more or get in touch, feel free to connect with me.
-      </p>
-    </section>
-
-    <section class="social-links">
-        <ul>
-            <li><a href="https://www.linkedin.com/in/diogo-ramos1" target="_blank">LinkedIn</a></li>
-            <li><a href="https://www.salesforce.com/trailblazer/dramos" target="_blank">Trailhead</a></li>
-            <li><a href="https://github.com/diogoramos-dev" target="_blank">GitHub</a></li>
-        </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Diogo Ramos</p>
-  </footer>
-</body>
+		<site-footer></site-footer>
+		
+	</body>
 </html>
