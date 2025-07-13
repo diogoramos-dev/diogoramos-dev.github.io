@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blog | Diogo Ramos</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+		<script src="components.js" defer></script>
+	</head>
+	
+	<body class="body">
+	
+		<site-header></site-header>
+
+		<main class="main container">
+		
+			<h1 class="title">Blog</h1>
+		
+			<section class="blog-grid">
+				
+				<a href="https://medium.com/@diogoramos-dev/article-one" target="_blank" class="blog-card" aria-label="Article One">
+					<div class="blog-icon" aria-hidden="true">
+						<svg width="32" height="32" fill="#888" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" ry="4"/></svg>
+					</div>
+					<div class="blog-content">
+						<h2 class="blog-title">Article One</h2>
+						<p class="blog-date">July 10, 2025</p>
+						<p class="blog-description">A guide to building scalable Salesforce architectures using real-world scenarios.</p>
+					</div>
+				</a>
+
+				<a href="https://medium.com/@diogoramos-dev/article-two" target="_blank" class="blog-card" aria-label="Article Two">
+					<div class="blog-icon" aria-hidden="true">
+						<svg width="32" height="32" fill="#888" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+					</div>
+					<div class="blog-content">
+						<h2 class="blog-title">Article Two</h2>
+						<p class="blog-date">July 3, 2025</p>
+						<p class="blog-description">Strategies to manage technical debt and improve developer productivity in Salesforce teams.</p>
+					</div>
+				</a>
+
+				<!-- Add more blog-card items as needed (up to 10) -->
+
+			</section>
+
+            <div class="blog-more">
+				<a href="https://medium.com/@diogoramos.dev" target="_blank" class="blog-more__link">View all articles here</a>
+			</div>
+
+		</main>
+
+		<site-footer></site-footer>
+		
+	</body>
+</html>
