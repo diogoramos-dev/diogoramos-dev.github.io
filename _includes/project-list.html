@@ -1,0 +1,16 @@
+{% assign limit = include.limit | default: 100 %}
+<ul class="project-list">
+	{% for project in site.data.projects limit: limit %}
+	<li class="project">
+		<a href="{{ project.url }}" class="project__link" target="_blank" rel="noopener">
+			<h3 class="project__title">{{ project.name }} <span aria-hidden="true">↗</span></h3>
+			<p class="project__desc">{{ project.description }}</p>
+			{% if project.stack %}
+			<ul class="tags">
+				{% for item in project.stack %}<li class="tag">{{ item }}</li>{% endfor %}
+			</ul>
+			{% endif %}
+		</a>
+	</li>
+	{% endfor %}
+</ul>

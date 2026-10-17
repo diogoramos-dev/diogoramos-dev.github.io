@@ -1,0 +1,17 @@
+{% comment %}
+	One row in a list of posts. Posts with `external_url` link out (e.g. to Medium).
+	Usage: {% include post-item.html post=post %}
+{% endcomment %}
+{% assign p = include.post %}
+{% assign href = p.external_url | default: p.url | relative_url %}
+<li class="post-item" data-series="{{ p.series | slugify }}">
+	<a href="{{ href }}" class="post-item__link"{% if p.external_url %} target="_blank" rel="noopener"{% endif %}>
+		{% if p.series %}<p class="post-item__series">{{ p.series }}</p>{% endif %}
+		<h3 class="post-item__title">{{ p.title }}{% if p.external_url %} <span class="post-item__ext" aria-label="opens on Medium">↗</span>{% endif %}</h3>
+		{% if p.description %}<p class="post-item__desc">{{ p.description }}</p>{% endif %}
+		<p class="post-item__meta">
+			<time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: '%b %-d, %Y' }}</time>
+			{% if p.external_url %}<span>· on Medium</span>{% else %}<span>· {% include reading-time.html content=p.content %}</span>{% endif %}
+		</p>
+	</a>
+</li>

@@ -1,0 +1,52 @@
+---
+layout: default
+title: Blog
+description: Articles on Salesforce architecture, development and best practices.
+redirect_from: /blog.html
+---
+<div class="wrap">
+	<header class="page-header">
+		<h1 class="page-header__title">Blog</h1>
+		<p class="page-header__lead">{{ page.description }}</p>
+	</header>
+
+	{% assign series = site.posts | map: 'series' | compact | uniq %}
+	{% if series.size > 0 %}
+	<div class="filters" role="group" aria-label="Filter by series">
+		<button type="button" class="chip" data-filter="" aria-pressed="true">All</button>
+		{% for s in series %}
+		<button type="button" class="chip" data-filter="{{ s | slugify }}" aria-pressed="false">{{ s }}</button>
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	{% assign by_year = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
+	{% for year in by_year %}
+	<section class="year-group">
+		<h2 class="year-group__title">{{ year.name }}</h2>
+		<ul class="post-list">
+			{% for post in year.items %}
+			{% include post-item.html post=post %}
+			{% endfor %}
+		</ul>
+	</section>
+	{% endfor %}
+</div>
+
+<script>
+	(function () {
+		var chips = document.querySelectorAll('[data-filter]');
+		chips.forEach(function (chip) {
+			chip.addEventListener('click', function () {
+				var f = chip.getAttribute('data-filter');
+				chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+				document.querySelectorAll('[data-series]').forEach(function (el) {
+					el.hidden = f && el.getAttribute('data-series') !== f;
+				});
+				document.querySelectorAll('.year-group').forEach(function (g) {
+					g.hidden = !g.querySelector('[data-series]:not([hidden])');
+				});
+			});
+		});
+	})();
+</script>

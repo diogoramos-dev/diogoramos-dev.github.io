@@ -1,34 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Diogo Ramos
+description: Salesforce Developer & Architect. Notes on Salesforce architecture, development and best practices.
+---
+<div class="wrap">
+	<section class="hero">
+		<h1 class="hero__title">Hi, I'm Diogo.</h1>
+		<p class="hero__lead">
+			I'm a Salesforce Developer and Architect with 8+ years on the platform and
+			23 certifications. I write about architecture, clean development and the
+			habits that make Salesforce projects succeed.
+		</p>
+		<ul class="hero__links">
+			<li><a href="{{ '/about/' | relative_url }}">More about me</a></li>
+			{% for link in site.links limit: 3 %}
+			<li><a href="{{ link.url }}" target="_blank" rel="me noopener">{{ link.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</section>
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Diogo Ramos</title>
-		<link rel="stylesheet" href="styles.css" />
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-		<script src="components.js" defer></script>
-	</head>
+	<section class="section">
+		<div class="section__head">
+			<h2 class="section__title">Latest writing</h2>
+			<a href="{{ '/blog/' | relative_url }}" class="section__more">All posts →</a>
+		</div>
+		<ul class="post-list">
+			{% for post in site.posts limit: 5 %}
+			{% include post-item.html post=post %}
+			{% endfor %}
+		</ul>
+	</section>
 
-	<body class="body body--home">
-		
-		<main class="main container">
-			
-			<h1 class="home__title">Diogo Ramos</h1>
-			<p class="home__subtitle">Salesforce Developer | Salesforce Architect | 23x Salesforce Certified</p>
-
-			<nav class="nav">
-				<ul class="nav__list">
-					<li><a href="about.html" class="nav__link">About</a></li>
-					<li><a href="projects.html" class="nav__link">Projects</a></li>
-					<li><a href="blog.html" class="nav__link">Blog</a></li>
-				</ul>
-			</nav>
-
-		</main>
-
-		<site-footer></site-footer>
-
-	</body>
-</html>
+	{% if site.data.projects.size > 0 %}
+	<section class="section">
+		<div class="section__head">
+			<h2 class="section__title">Projects</h2>
+			<a href="{{ '/projects/' | relative_url }}" class="section__more">All projects →</a>
+		</div>
+		{% include project-list.html limit=2 %}
+	</section>
+	{% endif %}
+</div>

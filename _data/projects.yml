@@ -1,0 +1,9 @@
+# Projects shown on /projects/ (and the two first ones on the home page).
+# The list is empty for now, so the Projects page shows a "coming soon" message.
+# To add one, remove the [] below and uncomment / copy the example.
+[]
+
+# - name: Project name
+#   description: One or two sentences on what it does and why it matters.
+#   url: https://github.com/diogoramos-dev/project-name
+#   stack: [Apex, LWC, Flow]

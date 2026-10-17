@@ -1,0 +1,76 @@
+# Site settings
+title: Diogo Ramos
+tagline: Salesforce Developer & Architect
+description: >-
+  Notes on Salesforce architecture, development and best practices
+  by Diogo Ramos, Salesforce Developer & Architect with 23 certifications.
+url: https://diogoramos-dev.github.io
+baseurl: ""
+lang: en
+timezone: America/Sao_Paulo
+
+author:
+  name: Diogo Ramos
+  url: https://diogoramos-dev.github.io/about/
+
+social:
+  name: Diogo Ramos
+  links:
+    - https://www.linkedin.com/in/diogo-ramos1
+    - https://github.com/diogoramos-dev
+    - https://medium.com/@diogoramos-dev
+
+# Links shown in the footer and on the About page
+links:
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/diogo-ramos1
+  - name: GitHub
+    url: https://github.com/diogoramos-dev
+  - name: Trailhead
+    url: https://www.salesforce.com/trailblazer/diogoramos-dev
+  - name: Medium
+    url: https://medium.com/@diogoramos-dev
+
+# Build
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: drafts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - .pages.yml
+  - vendor

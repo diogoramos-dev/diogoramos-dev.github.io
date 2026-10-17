@@ -1,0 +1,21 @@
+---
+layout: default
+title: Projects
+description: Open-source tools, experiments and side projects, mostly around the Salesforce platform.
+redirect_from: /projects.html
+---
+<div class="wrap">
+	<header class="page-header">
+		<h1 class="page-header__title">Projects</h1>
+		<p class="page-header__lead">{{ page.description }}</p>
+	</header>
+
+	{% if site.data.projects.size > 0 %}
+		{% include project-list.html %}
+	{% else %}
+		<div class="empty">
+			<p class="empty__title">New projects coming soon</p>
+			<p>I'm working on a few things that will show up here. Meanwhile, you can follow along on <a href="https://github.com/diogoramos-dev" target="_blank" rel="noopener">GitHub</a>.</p>
+		</div>
+	{% endif %}
+</div>

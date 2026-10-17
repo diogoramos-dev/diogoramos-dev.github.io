@@ -1,0 +1,61 @@
+# Config for Pages CMS (https://pagescms.org): a free web editor for this repo.
+# Sign in with GitHub, pick this repository, and write posts in a visual editor.
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, series]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Short description (shown in lists and search results)
+        type: text
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: series
+        label: Series
+        type: select
+        options:
+          values: [The Salesforce Architect Mindset, Best Practices]
+          creatable: true
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: cover
+        label: Cover image (optional)
+        type: image
+      - name: external_url
+        label: External link (only if the article lives on Medium)
+        type: string
+      - name: body
+        label: Article
+        type: rich-text
+
+  - name: projects
+    label: Projects
+    type: file
+    path: _data/projects.yml
+    list: true
+    fields:
+      - name: name
+        type: string
+      - name: description
+        type: text
+      - name: url
+        type: string
+      - name: stack
+        type: string
+        list: true

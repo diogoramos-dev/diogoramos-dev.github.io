@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<article class="wrap post">
+	<header class="post__header">
+		{% if page.series %}<p class="post__series">{{ page.series }}</p>{% endif %}
+		<h1 class="post__title">{{ page.title }}</h1>
+		{% if page.description %}<p class="post__lead">{{ page.description }}</p>{% endif %}
+		<div class="post__byline">
+			<img src="{{ '/favicon-32x32.png' | relative_url }}" alt="" width="36" height="36" class="post__avatar" />
+			<div>
+				<a href="{{ '/about/' | relative_url }}" class="post__author">{{ site.author.name }}</a>
+				<p class="post__meta">
+					<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+					· {% include reading-time.html content=content %}
+				</p>
+			</div>
+		</div>
+	</header>
+
+	{% if page.cover %}
+	<figure class="post__cover">
+		<img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: '' }}" />
+	</figure>
+	{% endif %}
+
+	<div class="prose prose--article">
+		{% if page.external_url %}
+		<p class="callout">This article is published on Medium. <a href="{{ page.external_url }}" rel="noopener">Read it there ↗</a></p>
+		{% endif %}
+		{{ content }}
+	</div>
+
+	{% if page.tags.size > 0 %}
+	<ul class="tags" aria-label="Tags">
+		{% for tag in page.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
+	</ul>
+	{% endif %}
+
+	<aside class="author-card">
+		<img src="{{ '/favicon-32x32.png' | relative_url }}" alt="" width="48" height="48" />
+		<div>
+			<p class="author-card__name">Written by {{ site.author.name }}</p>
+			<p class="author-card__bio">{{ site.tagline }}. 23× Salesforce Certified. I write about architecture, development and the habits that make projects succeed.</p>
+		</div>
+	</aside>
+
+	{% if page.previous or page.next %}
+	<nav class="post-nav" aria-label="More posts">
+		{% if page.previous %}
+		<a href="{{ page.previous.external_url | default: page.previous.url | relative_url }}" class="post-nav__link">
+			<span class="post-nav__label">← Previous</span>
+			<span class="post-nav__title">{{ page.previous.title }}</span>
+		</a>
+		{% else %}<span></span>{% endif %}
+		{% if page.next %}
+		<a href="{{ page.next.external_url | default: page.next.url | relative_url }}" class="post-nav__link post-nav__link--next">
+			<span class="post-nav__label">Next →</span>
+			<span class="post-nav__title">{{ page.next.title }}</span>
+		</a>
+		{% endif %}
+	</nav>
+	{% endif %}
+</article>
