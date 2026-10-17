@@ -20,7 +20,8 @@ layout: default
 
 	{% if page.cover %}
 	<figure class="post__cover">
-		<img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: '' }}" />
+		<img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | default: '' | escape }}" />
+		{% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}
 	</figure>
 	{% endif %}
 

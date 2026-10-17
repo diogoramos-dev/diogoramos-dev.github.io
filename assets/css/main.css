@@ -613,7 +613,20 @@ a {
 
 .post__cover img {
 	width: 100%;
+	max-height: 460px;
+	object-fit: cover;
 	border-radius: var(--radius);
+}
+
+.post__cover figcaption {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 13px;
+	color: var(--text-faint);
+}
+
+.post__cover figcaption a {
+	color: inherit;
 }
 
 /* ==========================================================================
